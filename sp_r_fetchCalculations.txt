@@ -1,0 +1,10 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_r_fetchCalculations`(IN input_year INT)
+BEGIN
+
+SELECT SUM(week1+week2+week3+week4+week5) AS team_capacity_hrs, T1.month, regioncode  
+FROM employee AS T1 
+INNER JOIN 
+region AS T2 ON T1.region_id_fk = T2.id 
+WHERE year=input_year AND is_billable=1 group by T1.month, T2.regioncode;
+
+END

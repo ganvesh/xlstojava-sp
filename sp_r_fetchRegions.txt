@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_r_fetchRegions`()
+BEGIN
+	SELECT id, regioncode FROM region;
+END

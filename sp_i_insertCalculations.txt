@@ -1,0 +1,8 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_i_insertCalculations`(IN in_emp_name VARCHAR(100),IN in_month VARCHAR(50),
+IN in_year INT,IN in_week1 INT,IN in_week_2 INT,IN in_week_3 INT,IN in_week_4 INT,IN in_week_5 INT,
+IN is_billable BIT,IN in_region_id INT)
+BEGIN
+	INSERT INTO employee(emp_name,month,year,week1,week2,week3,week4,week5,is_billable,region_id_fk) 
+    VALUES(in_emp_name, in_month, in_year, in_week1, in_week_2, in_week_3, in_week_4, in_week_5, 
+    is_billable, in_region_id);
+END
